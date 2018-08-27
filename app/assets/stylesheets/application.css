@@ -40,6 +40,21 @@ footer{
 
 }
 
+#books-index {
+  text-align: center
+}
+
 #books-index img{
   width: 100%;
+  padding: 3px;
+  border: 1px #ccc solid;
+}
+
+#books-index h3{
+  height: 50px;
+}
+#books-index .btn{
+  display: block;
+  margin-top: 20px;
+
 }
