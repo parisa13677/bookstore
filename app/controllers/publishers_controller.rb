@@ -8,7 +8,7 @@ class PublishersController < ApplicationController
     @publisher = Publisher.new(publisher_params)
     if @publisher.save
       flash[:notice] = "publisher Created"
-      redirect_to publisher_path
+      redirect_to publishers_path
     else
       render 'new'
     end

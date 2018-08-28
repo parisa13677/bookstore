@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def new
-    @page_title = 'Add New Book'
+    @page_title = ' Add New Book '
     @book = Book.new
     @category = Category.new
     @author = Author.new
@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(category_params)
+    @book = Book.new(book_params)
     @book.save
 
     redirect_to books_path
