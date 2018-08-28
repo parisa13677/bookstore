@@ -5,10 +5,13 @@ class PublishersController < ApplicationController
   end
 
   def create
-    @publisher = Publisher.new(category_params)
-    @publisher.save
-
-    redirect_to publishers_path
+    @publisher = Publisher.new(publisher_params)
+    if @publisher.save
+      flash[:notice] = "publisher Created"
+      redirect_to publisher_path
+    else
+      render 'new'
+    end
   end
 
   def update

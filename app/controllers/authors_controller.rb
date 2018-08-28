@@ -5,10 +5,13 @@ class AuthorsController < ApplicationController
   end
   def create
 
-    @author = Author.new(category_params)
-    @author.save
-
-    redirect_to authors_path
+    @author = Author.new(author_params)
+    if @author.save
+      flash[:notice] = "author Created"
+      redirect_to authors_path
+    else
+      render 'new'
+    end
   end
 
   def update
