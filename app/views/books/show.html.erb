@@ -1,26 +1,22 @@
 <div id="books-show">
-    <h2>Ruby On Rails Power</h2>
+    <h2><%= @book.title %></h2>
     <div class="books-show-left">
-        <%= image_tag('cover/ruby_on_rails_power.jpg')%>
+        <%= image_tag(@book.coverpath)%>
     </div>
-
     <div class="books-show-right">
         <h3>Book Info:</h3>
         <ul>
-            <li><strong> Category: </strong> Ruby On Rails</li>
-            <li><strong> Author: </strong>Aneesha Bakharia</li>
-            <li><strong>Publisher:</strong>Course Technology PTR</li>
-            <li><strong>Year:</strong>2007</li>
-            <li><strong>ISBN:</strong>159832167</li>
-            <li><strong>Format:</strong>Paperback</li>
-            <li><strong>Pages:</strong>678</li>
+            <li><strong> Category: </strong> <%= @book.category.name%></li>
+            <li><strong> Author: </strong><%= @book.author.first_name %><%= @book.author.last_name %></li>
+            <li><strong>Publisher:</strong><%= @book.Publisher.name%></li>
+            <li><strong>Year:</strong><%= @book.year%></li>
+            <li><strong>ISBN:</strong><%= @book.isbn%></li>
+            <li><strong>Format:</strong><%= @book.format%></li>
+            <li><strong>Pages:</strong><%= @book.pages%></li>
         </ul>
-
-        <%=link_to "Buy for $4.00",'https://www.ebay.com/itm/Ruby-on-Rails-Power-The-Comprehensive-Guide-by-Aneesha-Bakharia/142193154852?epid=50789121&hash=item211b5f5b24:g:~H4AAOSw~QRaIEPS',
-        class: 'btn btn-success', target:'_blank'%>
+        <%=link_to "Buy for " +@book.price, @book.buy, class:'btn btn-success', target:'_blank'%>
     </div>
-
     <div class="clearfix"></div>
     <h4>Excerpt</h4>
-    <p> Ruby on Rails is a feature-rich, easy to learn, and powerful web application framework that makes creating sophisticated, full featured web applications a snap. With the intuitive, straightforward nature of Ruby and the development platform provided by Rails, anyone can put together full-fledged web applications quickly, even if they're new to web programming. Ruby on Rails Power! is a comprehensive introduction to both the Ruby language and the Ruby on Rails framework, providing you with everything you need to author the next successful Web 2.0 application. It starts with the basics: installing Ruby, Ruby on Rails, and MySQL, and building a simple application in Rails. Then, since the Ruby on Rails framework is powered by the Ruby language, the book moves on to cover the basics of Ruby, making the learning curve for Ruby on Rails much easier to navigate. From there, the fundamentals everyone needs to develop a robust web application in Rails are covered in depth, from creating an interface to create, retrieve, update and delete records in a database with the Rails scaffold generator, to understanding the Model View Controller paradigm (Active Record, Action Controller and Action View) and using web services, AJAX, and Adobe Flex.</p>
+    <p><%= @book.excerpt%></p>
 </div>

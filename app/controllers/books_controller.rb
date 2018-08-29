@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# this is a book controller
 class BooksController < ApplicationController
   def new
     @page_title = ' Add New Book '
@@ -14,24 +17,24 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  def update
-  end
+  def update; end
 
-  def edit
-  end
+  def edit; end
 
-  def destroy
-  end
+  def destroy; end
 
   def index
+    @books = Book.all
   end
 
   def show
+    @book = Book.find(params[:id])
+    @categories = Category.all
   end
 
-  private
-   def book_params
-    params.require(:book).permit(:title, :category_id, :author_id, :publisher_id, :isbn, :price, :buy, :format, :excerpt, :pages, :year)
-   end
+private
 
+  def book_params
+    params.require(:book).permit(:title, :category_id, :author_id, :publisher_id, :isbn, :price, :buy, :format, :excerpt, :pages, :year, :coverpath)
+  end
 end

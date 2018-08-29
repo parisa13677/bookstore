@@ -1,49 +1,15 @@
 <div id="books-index">
-  <div class="row">
-    <div class="col-md-3 col-sm-3">
-       <h3>Ruby on Rails Power</h3>
-       <%= image_tag('cover/ruby_on_rails_power.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
-    <div class="col-md-3 col-sm-3">
-       <h3>Ajax on Rails </h3>
-       <%= image_tag('cover/ajax_on_rails.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
+    <% @books.each_slice(4) do |book| %>
+        <div class="row">
+            <% book.each do |book| %>
+               <div class="col-md-3 col-sm-3">
+               <h3><%= book.title %></h3>
+               <%= image_tag(book.coverpath) %>
+               <%= link_to 'Read More', book_path(book), class:'btn btn-primary' %>
+               </div>
+            <%end%>
 
-    </div>
-    <div class="col-md-3 col-sm-3">
-       <h3>Begining PHP5</h3>
-       <%= image_tag('cover/begining_PHP_5.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
-    <div class="col-md-3 col-sm-3">
-      <h3>Head First PHP</h3>
-       <%= image_tag('cover/head_first_php.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
+        </div>
+    <%end%>
 
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-3">
-      <h3>Html5 tRAINER </h3>
-       <%= image_tag('cover/html5_trainer.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
-    <div class="col-md-3 col-sm-3">
-      <h3>HTML5 & CSS3</h3>
-       <%= image_tag('cover/html5-css3.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
-    <div class="col-md-3 col-sm-3">
-      <h3>PHP Cookbook</h3>
-       <%= image_tag('cover/php_cookbook.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
-    <div class="col-md-3 col-sm-3">
-      <h3>Ruby On Rails Turtial</h3>
-       <%= image_tag('cover/ruby_on_rails_turtial.jpg')%>
-       <%=link_to 'Read More', book_path(1), class:'btn btn-primary'%>
-    </div>
-
-  </div>
 </div>

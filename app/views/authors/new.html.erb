@@ -1,5 +1,6 @@
 <h2> Add New Author</h2>
 <%= form_for @author do |f|%>
+    <!-- check for error-->
     <%if @author.errors.any?%>
        <% @author.errors.full_messages.each do |msg| %>
             <!-- show errors -->
@@ -14,7 +15,6 @@
        <%= f.label :last_name %><br />
        <%= f.text_field :last_name, class: 'form-control' %><br />
   </div>
-
   <%= f.submit "submit", class:'btn btn-primary'%>
   <%=link_to 'Cancel', authors_path, class:'btn btn-default'%>
 <% end %>
