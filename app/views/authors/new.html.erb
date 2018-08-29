@@ -3,8 +3,8 @@
     <!-- check for error-->
     <%if @author.errors.any?%>
        <% @author.errors.full_messages.each do |msg| %>
-            <!-- show errors -->
-            <div class="alert alert-danger"><%= msg %></div>
+          <!-- show errors -->
+          <div class="alert alert-danger"><%= msg %></div>
        <% end %>
     <% end %>
      <div class="form-group">
