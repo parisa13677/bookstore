@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# this is a about controller
+# This is a About controller
 class AboutController < ApplicationController
   def index
     @page_title = 'About Us'

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This is a Publisher controller
 class PublishersController < ApplicationController
   def new
     @page_title = 'Add New Publisher'
@@ -7,7 +10,7 @@ class PublishersController < ApplicationController
   def create
     @publisher = Publisher.new(publisher_params)
     if @publisher.save
-      flash[:notice] = "publisher Created"
+      flash[:notice] = 'Publisher Created'
       redirect_to publishers_path
     else
       render 'new'
@@ -15,22 +18,32 @@ class PublishersController < ApplicationController
   end
 
   def update
+    @publisher = Publisher.find(params[:id])
+    @publisher.update(publisher_params)
+    flash[:notice] = 'Publisher Updated'
+    redirect_to publishers_path
   end
 
   def edit
+    @publisher = Publisher.find(params[:id])
   end
 
   def destroy
+    @publisher = Publisher.find(params[:id])
+    @publisher.destroy
+    flash[:notice] = 'Publisher Removed'
+    redirect_to publishers_path
   end
 
   def index
+    @publishers = Publisher.all
   end
 
-  def show
-  end
+  def show; end
 
-  private
-   def publisher_params
+private
+
+  def publisher_params
     params.require(:publisher).permit(:name)
-   end
+  end
 end

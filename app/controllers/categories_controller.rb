@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# this is a category controller
+# this is a Category controller
 class CategoriesController < ApplicationController
   def new
     @page_title = 'Add New Category'

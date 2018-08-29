@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# this is a book controller
+# This is a Book Controller
 class BooksController < ApplicationController
   def new
     @page_title = ' Add New Book '
