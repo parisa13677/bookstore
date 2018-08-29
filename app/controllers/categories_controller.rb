@@ -3,7 +3,7 @@
 # this is a category controller
 class CategoriesController < ApplicationController
   def new
-    @page_title = 'Add New category'
+    @page_title = 'Add New Category'
     @category = Category.new
   end
 
@@ -15,16 +15,24 @@ class CategoriesController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   def update
+    @category = Category.find(params[:id])
+    @category.update(category_params)
+    flash[:notice] = 'Category Updated'
+    redirect_to categories_path
   end
 
   def edit
+    @category = Category.find(params[:id])
   end
 
   def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:notice] = 'Category Removed'
+    redirect_to categories_path
   end
 
   def index
@@ -32,13 +40,14 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = Category.find(params[:id])
+    @category = Category.find(params[:id])
     @categories = Category.all
     @books = @category.books
   end
 
-  private
-   def category_params
+private
+
+  def category_params
     params.require(:category).permit(:name)
-   end
+  end
 end
