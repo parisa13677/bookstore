@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# this is a category controller
 class CategoriesController < ApplicationController
   def new
     @page_title = 'Add New category'
@@ -7,7 +10,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "Category Created"
+      flash[:notice] = 'Category Created'
       redirect_to categories_path
     else
       render 'new'
@@ -25,9 +28,13 @@ class CategoriesController < ApplicationController
   end
 
   def index
+    @categories = Category.all
   end
 
   def show
+    @categories = Category.find(params[:id])
+    @categories = Category.all
+    @books = @category.books
   end
 
   private

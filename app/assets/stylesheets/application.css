@@ -13,64 +13,66 @@
  *= require_tree .
  *= require_self
  */
-body {
-  padding-top: 50px;
-  font-family:'Arial' sans-serif;
+ body{
+  padding-top: 5rem;
+  font-family:  'Arial', sans-serif;
   font-size: 14px;
   color: #666;
-  line-height: 1.5em;
+  line-height: 1.5em
 }
-
 header{
   background: #333;
   color: #fff;
   height: 80px;
   margin-bottom: 20px;
 }
-
 footer{
   background: #333;
   color: #fff;
   height: 60px;
   margin-top: 20px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 20px
 }
-
-#books-index {
-  text-align: center
+#books-index{
+  text-align: center;
+  margin-bottom: 20px;
 }
-
 #books-index img{
-  width: 100%;
+  widows: 70%;
   padding: 3px;
-  border: 1px #ccc solid;
+  border:1px #ccc solid;
 }
-
 #books-index h3{
-  height: 50px;
+  height:40px;
+  font-size: 14px;
+  margin-bottom: 20px;
+
 }
 #books-index .btn{
-  display: block;
-  margin-top: 20px;
+  display:block;
+  margin-top:20px;
+  margin-bottom: 20px;
 }
 
 #books-show h2{
   background: #f4f4f4;
   padding: 10px;
 }
-
 .books-show-left{
-  float:left;
-  width:40%;
+  float: left;
+  width: 40%;
 }
-
 .books-show-right{
   float: left;
-  width:60%;
+  width: 60%;
   margin-top: 10px;
 }
-
 #books-show .btn{
-  margin: 20px 0 0 70px;
+  margin:20px 0 0 70px;
+}
+
+img {
+  height: 70%;
+  width: 70%;
 }
